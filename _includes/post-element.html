@@ -15,6 +15,14 @@
       {%- endif -%}
     </div>
     
+    {%- if include.post.categories.size > 0 -%}
+      <div class="post-element__categories">
+        {%- for category in include.post.categories -%}
+          <span class="category category--{{ category | slugify }}">{{ category }}</span>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+    
     <time class="post-element__date" datetime="{{ include.post.date | date_to_xmlschema }}">
       {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
       {{ include.post.date | date: date_format }}
