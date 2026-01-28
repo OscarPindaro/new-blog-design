@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "Azzz"
-summary: "Optional custom summary text"
 date:   2026-01-26 21:38:14 +0100
 categories: jekyll update
+image: assets/images/godot.png
 ---
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 

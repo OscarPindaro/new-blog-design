@@ -1,0 +1,84 @@
+/**
+ * Post Element Component
+ */
+
+// Variables for easy experimentation
+$post-element-spacing: $spacing-unit;
+$post-element-image-width: 200px;  // adjust this easily
+$post-element-border: 1px solid $grey-color-light;  // for card style
+
+// Base post element
+.post-element {
+  margin-bottom: $spacing-unit;
+  padding-bottom: $spacing-unit * 0.5;
+  border-bottom: 2px solid $grey-color-light;
+
+  // i need this since the image should a s big a s the whole element
+
+}
+
+// Only use flex when image exists
+.post-element:has(.post-element__image) {
+  display: flex;
+  gap: $spacing-unit * 0.5;
+}
+// Title styles
+.post-element__title {
+  margin-bottom: $spacing-unit * 0.25;  // Space below title before summary
+  margin-top: 0;  // Remove default h3 top margin if any
+  
+  // Optional: adjust font size
+  @include relative-font-size(1.5);  // Or whatever size feels right
+  font-weight: bold;  // Could make it bold: 600 or 700
+  line-height: 1.2;  // Tighter line height for titles
+}
+
+.post-element__link {
+  color: $brand-color;
+  
+  &:visited {
+    color: darken($brand-color, 15%);
+  }
+  
+  &:hover {
+    color: $text-color;
+  }
+}
+
+.post-element__summary {
+  font-style: italic;
+  margin-bottom: $spacing-unit *0.25;
+}
+// Date styles
+.post-element__date {
+  font-size: $small-font-size; 
+  color: $grey-color;
+  display: block;
+}
+
+// Image styles
+.post-element__image {
+  width: 200px;  // Fixed width
+  height: 100%;  // Takes full height of parent
+  object-fit: cover;  // Crops image to fill the space nicely
+  flex-shrink: 0;  // Prevents image from shrinking
+}
+// .post-element__content {
+//   flex: 1;  // Takes up all available space
+// }
+// Layout modifiers (these you can toggle on/off)
+.post-element--card {
+  // card-specific styles (border, shadow, padding)
+}
+
+.post-element--list {
+  // list-specific styles (maybe just bottom border)
+}
+
+.post-element--image-left {
+  // flexbox to position image left
+}
+
+.post-element--image-right {
+  // flexbox to position image right
+}

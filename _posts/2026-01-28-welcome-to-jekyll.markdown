@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "My Post Title"
-summary: "Optional custom summary text"
 date:   2026-01-28 21:38:14 +0100
 categories: jekyll update
 ---
