@@ -33,7 +33,7 @@ h1, h2, h3, h4, h5, h6,
 p, blockquote, pre,
 ul, ol, dl, figure,
 %vertical-rhythm {
-  margin-bottom: $spacing-unit * 0.5;
+  margin-bottom: $spacing-unit * 0.75;
 }
 
 /**
@@ -49,7 +49,6 @@ main {
 img {
   max-width: 100%;
   vertical-align: middle;
-  border: 3px solid #000;  // Brutalist border on all images
 }
 
 /**
@@ -61,8 +60,8 @@ figure > img {
 
 figcaption {
   font-size: $small-font-size;
-  font-weight: 900;
-  text-transform: uppercase;
+  color: $grey-color;
+  margin-top: $spacing-unit * 0.25;
 }
 
 /**
@@ -83,36 +82,44 @@ li {
  * Headings
  */
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 900;  // Extra bold
-  text-transform: uppercase;  // ALL CAPS
-  letter-spacing: -0.02em;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h1 {
+  @include relative-font-size(2.5);
+}
+
+h2 {
+  @include relative-font-size(2);
+}
+
+h3 {
+  @include relative-font-size(1.5);
 }
 
 /**
  * Links
  */
 a {
-  color: $brand-color;
-  text-decoration: none;
-  font-weight: 900;
-  border-bottom: 2px solid $brand-color;
+  color: $text-color;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
 
   &:visited {
-    color: $brand-color;
-    border-bottom-color: $brand-color;
+    color: $text-color;
   }
 
   &:hover {
-    color: #fff;
-    background-color: $brand-color;
-    border-bottom-color: $brand-color;
+    text-decoration-thickness: 2px;
   }
 
   .social-media-list &:hover {
-    text-decoration: none;
+    text-decoration: underline;
 
     .username {
-      text-decoration: none;
+      text-decoration: underline;
     }
   }
 }
@@ -122,13 +129,11 @@ a {
  */
 blockquote {
   color: $text-color;
-  border-left: 5px solid #000;  // Thick black border
-  padding-left: $spacing-unit * 0.5;
+  border-left: 3px solid $grey-color-light;
+  padding-left: $spacing-unit * 0.75;
   @include relative-font-size(1.125);
-  letter-spacing: -0.01em;
-  font-style: normal;  // No italic
-  font-weight: 700;
-  background-color: $mondrian-yellow;  // Mondrian yellow background
+  font-style: italic;
+  margin: $spacing-unit 0;
 
   > :last-child {
     margin-bottom: 0;
@@ -141,19 +146,19 @@ blockquote {
 pre,
 code {
   @include relative-font-size(0.9375);
-  border: 3px solid #000;  // Thick black border
-  background-color: $mondrian-yellow;  // Yellow background
+  border: 1px solid $grey-color-light;
+  background-color: #f5f5f5;
   font-family: "Courier New", Courier, monospace;
-  font-weight: 700;
 }
 
 code {
-  padding: 2px 6px;
+  padding: 2px 5px;
 }
 
 pre {
-  padding: 12px 16px;
+  padding: $spacing-unit * 0.5;
   overflow-x: auto;
+  line-height: 1.4;
 
   > code {
     border: 0;
@@ -198,7 +203,7 @@ pre {
     width: 16px;
     height: 16px;
     display: inline-block;
-    fill: #000;  // Black icons
+    fill: $text-color;
     padding-right: 5px;
     vertical-align: text-top;
 }
@@ -218,25 +223,23 @@ table {
   text-align: $table-text-align;
   color: $text-color;
   border-collapse: collapse;
-  border: 3px solid #000;  // Thick black border
+  border: 1px solid $grey-color-light;
   
   tr {
-    &:nth-child(even) {
-      background-color: $mondrian-yellow;  // Yellow stripes
-    }
+    border-bottom: 1px solid $grey-color-light;
   }
   
   th, td {
-    padding: ($spacing-unit * 0.3333333333) ($spacing-unit * 0.5);
-    border: 2px solid #000;
-    font-weight: 700;
+    padding: ($spacing-unit * 0.4) ($spacing-unit * 0.5);
   }
   
   th {
-    background-color: $mondrian-red;
-    color: #fff;
-    border: 3px solid #000;
-    text-transform: uppercase;
-    font-weight: 900;
+    background-color: #f5f5f5;
+    border-bottom: 2px solid $grey-color-light;
+    font-weight: 700;
+  }
+  
+  td {
+    border-bottom: 1px solid $grey-color-light;
   }
 }

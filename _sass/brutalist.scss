@@ -3,7 +3,7 @@
 // Brutalist variables - override minima defaults
 $base-font-family: "Courier New", Courier, monospace !default;
 $base-font-size: 16px !default;
-$base-font-weight: 700 !default;  // Bold by default
+$base-font-weight: 400 !default;  
 $small-font-size: $base-font-size * 0.875 !default;
 $base-line-height: 1.4 !default;  // Tighter line height
 
@@ -13,11 +13,6 @@ $spacing-unit: 30px !default;
 $text-color: #000 !default;
 $background-color: #fff !default;
 $brand-color: #ff0000 !default;  // Primary red (Mondrian)
-
-// Mondrian primary colors
-$mondrian-red: #ff0000 !default;
-$mondrian-blue: #0000ff !default;
-$mondrian-yellow: #ffff00 !default;
 
 // All greys become black
 $grey-color: #000 !default;
