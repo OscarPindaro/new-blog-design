@@ -13,7 +13,8 @@ layout: default
     <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
     <div class="post-list">
       {%- for post in site.posts -%}
-		<div class="post-element--list">  <!-- or -->
+		<!-- <div class="post-element--card">  or post-element--list -->
+		<div class="or post-element--list">  
       		{%- include post-element.html post=post -%}
     	</div>
       {%- endfor -%}

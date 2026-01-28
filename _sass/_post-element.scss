@@ -7,21 +7,9 @@ $post-element-spacing: $spacing-unit;
 $post-element-image-width: 200px;  // adjust this easily
 $post-element-border: 1px solid $grey-color-light;  // for card style
 
-// Hide images on mobile screens
-@include media-query($on-palm) {
-  .post-element__image {
-    display: none;
-  }
-}
-
-// Base post element
+// Base post element - NO spacing/borders here, modifiers handle that
 .post-element {
-  margin-bottom: $spacing-unit;
-  padding-bottom: $spacing-unit * 0.5;
-  border-bottom: 2px solid $grey-color-light;
-
-  // i need this since the image should a s big a s the whole element
-
+  // Empty base, modifiers add styling
 }
 
 // Only use flex when image exists
@@ -29,15 +17,15 @@ $post-element-border: 1px solid $grey-color-light;  // for card style
   display: flex;
   gap: $spacing-unit * 0.5;
 }
+
 // Title styles
 .post-element__title {
   margin-bottom: $spacing-unit * 0.25;  // Space below title before summary
   margin-top: 0;  // Remove default h3 top margin if any
   
-  // Optional: adjust font size
-  @include relative-font-size(1.5);  // Or whatever size feels right
-  font-weight: bold;  // Could make it bold: 600 or 700
-  line-height: 1.2;  // Tighter line height for titles
+  @include relative-font-size(1.5);
+  font-weight: bold;
+  line-height: 1.2;
 }
 
 .post-element__link {
@@ -52,10 +40,12 @@ $post-element-border: 1px solid $grey-color-light;  // for card style
   }
 }
 
+// Summary/excerpt styles
 .post-element__summary {
   font-style: italic;
-  margin-bottom: $spacing-unit *0.25;
+  margin-bottom: $spacing-unit * 0.25;
 }
+
 // Date styles
 .post-element__date {
   font-size: $small-font-size; 
@@ -65,10 +55,17 @@ $post-element-border: 1px solid $grey-color-light;  // for card style
 
 // Image styles
 .post-element__image {
-  width: 200px;  // Fixed width
-  height: 100%;  // Takes full height of parent
-  object-fit: cover;  // Crops image to fill the space nicely
-  flex-shrink: 0;  // Prevents image from shrinking
+  width: 200px;
+  height: 100%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+// Hide images on mobile screens
+@include media-query($on-palm) {
+  .post-element__image {
+    display: none;
+  }
 }
 
 // Card style - bordered box with padding and shadow
@@ -78,26 +75,17 @@ $post-element-border: 1px solid $grey-color-light;  // for card style
   border-radius: 4px;
   background-color: $background-color;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  
-  // Add more space between cards
   margin-bottom: $spacing-unit * 1.5;
 }
 
 // List style - minimal with just a separator
 .post-element--list {
   padding-bottom: $spacing-unit * 0.5;
-  border-bottom: 1px solid $grey-color-light;
+  border-bottom: 3px solid $grey-color-light;
+  margin-bottom: $spacing-unit * 0.5;
   
-  // Remove border from last item
   &:last-child {
     border-bottom: none;
+    padding-bottom: 0;
   }
-}
-
-.post-element--image-left {
-  // flexbox to position image left
-}
-
-.post-element--image-right {
-  // flexbox to position image right
 }
