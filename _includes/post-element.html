@@ -1,0 +1,24 @@
+<article class="post-element">
+  <h3 class="post-element__title">
+    <a class="post-element__link" href="{{ include.post.url | relative_url }}">
+      {{ include.post.title | escape }}
+    </a>
+  </h3>
+  
+  {%- if include.post.image -%}
+    <img class="post-element__image" src="{{ include.post.image }}" alt="{{ include.post.title | escape }}">
+  {%- endif -%}
+  
+  <div class="post-element__summary">
+    {%- if include.post.summary -%}
+      {{ include.post.summary }}
+    {%- else -%}
+      {{ include.post.excerpt }}
+    {%- endif -%}
+  </div>
+  
+  <time class="post-element__date" datetime="{{ include.post.date | date_to_xmlschema }}">
+    {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+    {{ include.post.date | date: date_format }}
+  </time>
+</article>
