@@ -7,6 +7,13 @@ $post-element-spacing: $spacing-unit;
 $post-element-image-width: 200px;  // adjust this easily
 $post-element-border: 1px solid $grey-color-light;  // for card style
 
+// Hide images on mobile screens
+@include media-query($on-palm) {
+  .post-element__image {
+    display: none;
+  }
+}
+
 // Base post element
 .post-element {
   margin-bottom: $spacing-unit;
@@ -63,16 +70,28 @@ $post-element-border: 1px solid $grey-color-light;  // for card style
   object-fit: cover;  // Crops image to fill the space nicely
   flex-shrink: 0;  // Prevents image from shrinking
 }
-// .post-element__content {
-//   flex: 1;  // Takes up all available space
-// }
-// Layout modifiers (these you can toggle on/off)
+
+// Card style - bordered box with padding and shadow
 .post-element--card {
-  // card-specific styles (border, shadow, padding)
+  padding: $spacing-unit * 0.75;
+  border: 1px solid $grey-color-light;
+  border-radius: 4px;
+  background-color: $background-color;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+  // Add more space between cards
+  margin-bottom: $spacing-unit * 1.5;
 }
 
+// List style - minimal with just a separator
 .post-element--list {
-  // list-specific styles (maybe just bottom border)
+  padding-bottom: $spacing-unit * 0.5;
+  border-bottom: 1px solid $grey-color-light;
+  
+  // Remove border from last item
+  &:last-child {
+    border-bottom: none;
+  }
 }
 
 .post-element--image-left {
