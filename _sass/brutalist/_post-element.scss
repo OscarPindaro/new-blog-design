@@ -1,0 +1,100 @@
+/**
+ * Post Element Component - BRUTALIST STYLE
+ */
+
+// Brutalist variables
+$post-element-spacing: $spacing-unit;
+$post-element-image-width: 200px;
+$brutalist-border: 3px solid #000;  // Thick black borders
+$brutalist-bg: #fff;  // Pure white background
+
+// Base post element
+.post-element {
+  // Empty base, modifiers add styling
+}
+
+// Only use flex when image exists
+.post-element:has(.post-element__image) {
+  display: flex;
+  gap: 0;  // No gap in brutalism, tight layouts
+}
+
+// Title styles
+.post-element__title {
+  margin-bottom: $spacing-unit * 0.25;
+  margin-top: 0;
+  
+  @include relative-font-size(1.75);  // Bigger, bolder
+  font-weight: 900;  // Extra bold
+  line-height: 1.1;
+  text-transform: uppercase;  // ALL CAPS for brutalism
+  letter-spacing: -0.02em;  // Tight spacing
+}
+
+.post-element__link {
+  color: #000;  // Pure black
+  text-decoration: none;
+  
+  &:visited {
+    color: #000;  // Same as unvisited
+  }
+  
+  &:hover {
+    color: #fff;  // White text
+    background-color: #000;  // Black background (inverse)
+  }
+}
+
+// Summary/excerpt styles
+.post-element__summary {
+  font-style: normal;  // No italic in brutalism
+  margin-bottom: $spacing-unit * 0.25;
+  font-size: $base-font-size;
+  line-height: 1.3;
+}
+
+// Date styles
+.post-element__date {
+  font-size: $small-font-size; 
+  color: #000;
+  display: block;
+  font-weight: 700;  // Bold date
+  text-transform: uppercase;  // ALL CAPS
+}
+
+// Image styles
+.post-element__image {
+  width: 200px;
+  height: 100%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: $brutalist-border;  // Thick black border
+}
+
+// Hide images on mobile screens
+@include media-query($on-palm) {
+  .post-element__image {
+    display: none;
+  }
+}
+
+// Card style - BRUTALIST VERSION
+.post-element--card {
+  padding: $spacing-unit;
+  border: $brutalist-border;  // Thick black border
+  background-color: $brutalist-bg;
+  margin-bottom: $spacing-unit;
+  
+  // No border-radius
+  // No box-shadow
+}
+
+// List style - BRUTALIST VERSION
+.post-element--list {
+  padding: $spacing-unit * 0.75 0;
+  border-bottom: $brutalist-border;  // Thick black border
+  
+  &:last-child {
+    border-bottom: $brutalist-border;  // Keep border even on last
+  }
+}
