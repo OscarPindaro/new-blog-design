@@ -8,7 +8,7 @@ title: Pensierini
 {%- if site.pensierini.size > 0 -%}
   <ul class="pensierini-list">
     {%- for pensierino in site.pensierini -%}
-      <li class="pensierino-element--list">
+      <li class="pensierino-element--list" id="pensierino-{{ pensierino.title | slugify }}">
         {%- include my_includes/pensierino-element.html pensierino=pensierino -%}
       </li>
     {%- endfor -%}

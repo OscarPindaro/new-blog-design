@@ -1,6 +1,8 @@
 <pensierino-element>
-	<time datetime="{{ include.pensierino.date | date_to_xmlschema }}">
-		{{ include.pensierino.date | date: "%b %-d, %Y %H:%M" }}
-	</time>
+	<a href="#pensierino-{{ include.pensierino.title | slugify }}" class="pensierino-link">
+		<time datetime="{{ include.pensierino.date | date_to_xmlschema }}">
+			{{ include.pensierino.date | date: "%b %-d, %Y %H:%M" }}
+		</time>
+	</a>
 	<p>{{ include.pensierino.content }}</p>
 </pensierino-element>
