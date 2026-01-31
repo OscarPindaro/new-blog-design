@@ -28,7 +28,7 @@ post-item {
     font-weight: 700;
     line-height: 1.2;
     text-decoration: underline;
-    text-decoration-color: #0000ff;
+    text-decoration-color: $blue;
     text-underline-offset: 5px;
     
     a {
@@ -40,7 +40,7 @@ post-item {
       }
       
       &:hover {
-        color: #0000ff;
+        color: $blue;
       }
     }
   }
@@ -101,7 +101,7 @@ post-item {
     &[data-category="computer-science"]::before {
       width: 32px;
       height: 32px;
-      background-color: #0000ff;
+      background-color: $blue;
     }
     
     // GDR - yellow triangle
@@ -110,14 +110,14 @@ post-item {
       height: 0;
       border-left: 16px solid transparent;
       border-right: 16px solid transparent;
-      border-bottom: 28px solid #ffff00;
+      border-bottom: 28px solid $yellow;
     }
     
     // Philosophy - red circle
     &[data-category="philosophy"]::before {
       width: 32px;
       height: 32px;
-      background-color: #ff0000;
+      background-color: $red;
       border-radius: 50%;
     }
   }

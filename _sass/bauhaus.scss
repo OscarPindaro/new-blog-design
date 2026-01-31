@@ -11,16 +11,22 @@ $divider-thickness: 3px !default;
 
 $spacing-unit: 30px !default;
 
-// Brutalist colors - pure and stark
-$text-color: #000 !default;
-$background-color: #fff !default;
-$brand-color: #ff0000 !default;  // Primary red (Mondrian)
+// bauhaus colors - pure and stark
+$black: #261D11;
+$white: #fafafa;
+$red: #A6290D;
+$yellow: #F2B705;
+$blue: #0477BF;
+$green: #00825a;
 
-// All greys become black
-$grey-color: #000 !default;
-$grey-color-light: #000 !default;
-$grey-color-dark: #000 !default;
+$text-color: $black !default;
+$background-color: $white !default;
+$brand-color: $red !default;  
 
+// Greys use Bauhaus palette
+$grey-color: #888888 !default;
+$grey-color-light: lighten($black, 60%) !default;  // Very light version of black
+$grey-color-dark: $black !default;
 $table-text-align: left !default;
 
 $content-width: 800px !default;
@@ -40,8 +46,8 @@ $on-laptop: 800px !default;
 
 // Import brutalist partials
 @import
-  "brutalist/base",
-  "brutalist/layout",
-  "brutalist/syntax-highlighting",
-  "brutalist/post-element"
+  "bauhaus/base",
+  "bauhaus/layout",
+  "bauhaus/syntax-highlighting",
+  "bauhaus/post-element"
 ;
