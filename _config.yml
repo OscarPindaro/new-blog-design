@@ -31,6 +31,25 @@ theme: minima
 plugins:
   - jekyll-feed
 
+# Collections
+collections:
+  pensierini:
+    output: false
+    permalink: /pensierini/:title/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "pensierini"
+    values:
+      layout: "pensierino"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to

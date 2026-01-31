@@ -1,0 +1,11 @@
+---
+layout: default
+title: Pensierini
+---
+
+<h1>Pensierini</h1>
+<ul>
+  {%- for pensierino in site.pensierini -%}
+    {%- include my_includes/pensierino-element.html pensierino=pensierino -%}
+  {%- endfor -%}
+</ul>
