@@ -12,19 +12,31 @@ $divider-thickness: 3px !default;
 $spacing-unit: 30px !default;
 
 // bauhaus colors - pure and stark
+// $red: #A6290D;
+// $yellow: #F2B705;
+// $blue: #0477BF;
+// $green: #00825a;
 $black: #261D11;
-$white: #fafafa;
-$red: #A6290D;
-$yellow: #F2B705;
-$blue: #0477BF;
+$bau_white: #fef8ec;
+$white: #ffffff;
+// $white: #f4f0e7;
+$red: #DD033D;
+$pink: #E03459;
+$coral: #E8654A;
+$yellow: #FDC600;
 $green: #00825a;
+$blue: #0477BF;
+$purple: #876abd;
+
+
+
 
 $text-color: $black !default;
-$background-color: $white !default;
+$background-color: $bau_white !default;
 $brand-color: $red !default;  
 
 // Greys use Bauhaus palette
-$grey-color: #888888 !default;
+$grey-color: #777 !default;
 $grey-color-light: #BBBBBB !default;  // Very light version of black
 $grey-color-dark: #444444 !default;
 $table-text-align: left !default;
