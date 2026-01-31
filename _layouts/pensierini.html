@@ -4,8 +4,13 @@ title: Pensierini
 ---
 
 <h1>Pensierini</h1>
-<ul>
-  {%- for pensierino in site.pensierini -%}
-    {%- include my_includes/pensierino-element.html pensierino=pensierino -%}
-  {%- endfor -%}
-</ul>
+
+{%- if site.pensierini.size > 0 -%}
+  <ul class="pensierini-list">
+    {%- for pensierino in site.pensierini -%}
+      <li class="pensierino-element--list">
+        {%- include my_includes/pensierino-element.html pensierino=pensierino -%}
+      </li>
+    {%- endfor -%}
+  </ul>
+{%- endif -%}

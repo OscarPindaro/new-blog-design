@@ -1,6 +1,6 @@
-<pensierino>
-	{%- if include.pensierino.title -%}
-	<h3>{{include.pensierino.title}}</h3>
-	{%- endif -%}
-	<p>{{include.pensierino.content}}</p>
-</pensierino>
+<pensierino-element>
+	<time datetime="{{ include.pensierino.date | date_to_xmlschema }}">
+		{{ include.pensierino.date | date: "%b %-d, %Y %H:%M" }}
+	</time>
+	<p>{{ include.pensierino.content }}</p>
+</pensierino-element>

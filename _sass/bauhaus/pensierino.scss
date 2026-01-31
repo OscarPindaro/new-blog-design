@@ -1,0 +1,60 @@
+.pensierini-list {
+  list-style: none;
+  margin-left: 0;
+}
+
+.pensierino-element--list {
+  // Color cycling based on position from the end (6 colors)
+  &:nth-last-child(6n+1) pensierino-element {
+    border-left-color: $red;
+    time { color: rgba($red, 1); }
+  }
+
+  &:nth-last-child(6n+2) pensierino-element {
+    border-left-color: $coral;
+    time { color: rgba($coral, 1); }
+  }
+
+  &:nth-last-child(6n+3) pensierino-element {
+    border-left-color: $yellow;
+    time { color: rgba($yellow, 1); }
+  }
+
+  &:nth-last-child(6n+4) pensierino-element {
+    border-left-color: $green;
+    time { color: rgba($green, 1); }
+  }
+
+  &:nth-last-child(6n+5) pensierino-element {
+    border-left-color: $blue;
+    time { color: rgba($blue, 1); }
+  }
+
+  &:nth-last-child(6n+6) pensierino-element {
+    border-left-color: $purple;
+    time { color: rgba($purple, 1); }
+  }
+}
+
+pensierino-element {
+  display: block;
+  padding: $spacing-unit * 0.5;
+  border-left: 5px solid;
+  margin-bottom: $spacing-unit;
+  
+  time {
+    display: block;
+    font-size: $small-font-size;
+    margin-bottom: $spacing-unit * 0.25;
+  }
+  
+  p {
+    margin: 0;
+    line-height: $base-line-height;
+    color: $text-color;
+    
+    &:not(:last-child) {
+      margin-bottom: $spacing-unit * 0.25;
+    }
+  }
+}
