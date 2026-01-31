@@ -11,14 +11,13 @@ layout: default
 
   {%- if site.posts.size > 0 -%}
     <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
-    <div class="post-list">
+    <ul class="post-list">
       {%- for post in site.posts -%}
-		<!-- <div class="post-element--card">  or post-element--list -->
-		<div class="post-element--list">  
-      		{%- include post-element.html post=post -%}
-    	</div>
+      <li class="post-element--list">
+        {%- include post-element.html post=post -%}
+      </li>
       {%- endfor -%}
-    </div>
+    </ul>
 
     <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
   {%- endif -%}
