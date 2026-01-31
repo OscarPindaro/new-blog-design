@@ -25,8 +25,8 @@ $brand-color: $red !default;
 
 // Greys use Bauhaus palette
 $grey-color: #888888 !default;
-$grey-color-light: lighten($black, 60%) !default;  // Very light version of black
-$grey-color-dark: $black !default;
+$grey-color-light: #BBBBBB !default;  // Very light version of black
+$grey-color-dark: #444444 !default;
 $table-text-align: left !default;
 
 $content-width: 800px !default;
