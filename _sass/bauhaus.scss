@@ -59,6 +59,7 @@ $on-laptop: 800px !default;
 
 // Import brutalist partials
 @import
+  "bauhaus/mixins",
   "bauhaus/base",
   "bauhaus/layout",
   "bauhaus/syntax-highlighting",

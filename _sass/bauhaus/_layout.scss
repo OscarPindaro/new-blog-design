@@ -50,7 +50,21 @@
     &:hover {
       text-decoration: underline;
     }
+    
+    // Active/current page style
+    &.active,
+    &[aria-current="page"] {
+      font-weight: bold;
+      border: 3px solid $black;
+      padding: 4px 8px;
+      text-decoration: none;
+      
+      &:hover {
+        text-decoration: none;
+      }
+    }
   }
+
 
   @include media-query($on-palm) {
     position: absolute;
