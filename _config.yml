@@ -36,7 +36,6 @@ kramdown:
 theme: minima
 plugins:
   - jekyll-feed
-  - kramdown-math-katex
 
 # Collections
 collections:
