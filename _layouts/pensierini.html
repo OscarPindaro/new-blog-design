@@ -14,3 +14,28 @@ title: Pensierini
     {%- endfor -%}
   </ul>
 {%- endif -%}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.pensierino-link').forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      // Get the full URL with hash
+      const url = window.location.origin + window.location.pathname + this.getAttribute('href');
+      
+      // Copy to clipboard
+      navigator.clipboard.writeText(url).then(() => {
+        // Add visual feedback
+        this.classList.add('copied');
+        
+        // Remove the class after animation completes
+        setTimeout(() => {
+          this.classList.remove('copied');
+        }, 2000);
+      }).catch(err => {
+        console.error('Failed to copy:', err);
+      });
+    });
+  });
+});
+</script>

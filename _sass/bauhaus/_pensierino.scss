@@ -5,38 +5,19 @@
 
 .pensierino-element--list {
   scroll-margin-top: 40vh;  
-
-  // Color cycling based on position from the end (6 colors)
-  &:nth-last-child(6n+1) pensierino-element {
-    border-left-color: $red;
-    time { color: rgba($red, 1); }
-  }
-
-  &:nth-last-child(6n+2) pensierino-element {
-    border-left-color: $coral;
-    time { color: rgba($coral, 1); }
-  }
-
-  &:nth-last-child(6n+3) pensierino-element {
-    border-left-color: $yellow;
-    time { color: rgba($yellow, 1); }
-  }
-
-  &:nth-last-child(6n+4) pensierino-element {
-    border-left-color: $green;
-    time { color: rgba($green, 1); }
-  }
-
-  &:nth-last-child(6n+5) pensierino-element {
+  // Color cycling based on position from the end (3 colors)
+  &:nth-last-child(3n+1) pensierino-element {
     border-left-color: $blue;
-    time { color: rgba($blue, 1); }
+    time, .pensierino-link { color: rgba($blue, 1); }
   }
-
-  &:nth-last-child(6n+6) pensierino-element {
-    border-left-color: $purple;
-    time { color: rgba($purple, 1); }
+  &:nth-last-child(3n+2) pensierino-element {
+    border-left-color: $yellow;
+    time, .pensierino-link { color: rgba($yellow, 1); }
   }
-
+  &:nth-last-child(3n+3) pensierino-element {
+    border-left-color: $red;
+    time, .pensierino-link { color: rgba($red, 1); }
+  }
   &:target pensierino-element {
     border-left-width: 20px;
     border-right: 2px solid;
@@ -45,21 +26,17 @@
   }
 }
 
-
-
 pensierino-element {
   display: block;
   padding: $spacing-unit * 0.5;
   border-left: 5px solid;
-//   border-right: 1px solid;
-//   border-top: 1px solid;
-//   border-bottom: 1px solid;
   margin-bottom: $spacing-unit;
   
   time {
     display: block;
     font-size: $small-font-size;
     margin-bottom: $spacing-unit * 0.25;
+    font-weight: bold;
   }
   
   p {
@@ -70,5 +47,78 @@ pensierino-element {
     &:not(:last-child) {
       margin-bottom: $spacing-unit * 0.25;
     }
+  }
+  
+  .pensierino-link {
+    color: inherit;
+    opacity: 0.2;
+    margin-left: 0.5rem;
+    text-decoration: none;
+    transition: opacity 0.2s;
+    position: relative;
+    
+    &.copied {
+      opacity: 1 !important;
+      animation: flash 0.5s ease-out;
+    }
+    
+    &::after {
+      content: 'Copied!';
+      position: absolute;
+      left: 100%;
+      top: 0;  // Change from 50% to 0
+      transform: translateY(0);  // Remove the -50% vertical centering
+      margin-left: 0.5rem;
+      font-size: $small-font-size * 0.85;
+      font-weight: bold;
+      opacity: 0;
+      pointer-events: none;
+      white-space: nowrap;
+    }
+    
+    &.copied::after {
+      animation: show-message 2s ease-out;
+    }
+  }
+  
+  .pensierino-link svg {
+    fill: currentColor;
+  }
+  
+  .header {
+    display: flex;
+    align-items: center;
+  }
+  
+  &:hover .pensierino-link {
+    opacity: 0.5;
+  }
+
+  .pensierino-link:hover {
+    opacity: 1 !important;
+  }
+}
+
+@keyframes flash {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+@keyframes show-message {
+  0% { 
+    opacity: 0;
+    transform: translateY(0) translateX(-5px);  // Remove -50%
+  }
+  10% { 
+    opacity: 1;
+    transform: translateY(0) translateX(0);  // Remove -50%
+  }
+  90% { 
+    opacity: 1;
+    transform: translateY(0) translateX(0);  // Remove -50%
+  }
+  100% { 
+    opacity: 0;
+    transform: translateY(0) translateX(5px);  // Remove -50%
   }
 }
