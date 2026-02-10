@@ -50,6 +50,11 @@ defaults:
     values:
       layout: "post"
 
+sass:
+  quiet_deps: true
+  silence_deprecations:
+    - import
+
 # this pages will appear in the nav bar
 # the pages MUST have a title
 header_pages:

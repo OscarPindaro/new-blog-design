@@ -12,33 +12,24 @@ $divider-thickness: 3px !default;
 $spacing-unit: 30px !default;
 
 // bauhaus colors - pure and stark
-// $red: #A6290D;
-// $yellow: #F2B705;
-// $blue: #0477BF;
-// $green: #00825a;
 $black: #261D11;
 $bau_white: #fef8ec;
 $white: #ffffff;
-// $white: #f4f0e7;
 $red: #DD033D;
 $pink: #E03459;
 $coral: #E8654A;
 $yellow: #FDC600;
-$yellow-dark: #C9A500;  // Darker yellow for better readability
+$yellow-dark: #C9A500;
 $green: #00825a;
 $blue: #0477BF;
 $purple: #876abd;
-
-
-
 
 $text-color: $black !default;
 $background-color: $bau_white !default;
 $brand-color: $red !default;  
 
-// Greys use Bauhaus palette
 $grey-color: #777 !default;
-$grey-color-light: #BBBBBB !default;  // Very light version of black
+$grey-color-light: #BBBBBB !default;
 $grey-color-dark: #444444 !default;
 $table-text-align: left !default;
 
@@ -46,7 +37,6 @@ $content-width: 800px !default;
 $on-palm: 600px !default;
 $on-laptop: 800px !default;
 
-// Mixins stay the same
 @mixin media-query($device) {
   @media screen and (max-width: $device) {
     @content;
@@ -57,7 +47,6 @@ $on-laptop: 800px !default;
   font-size: $base-font-size * $ratio;
 }
 
-// Import brutalist partials
 @import
   "bauhaus/mixins",
   "bauhaus/base",
