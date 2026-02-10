@@ -43,7 +43,7 @@ defaults:
       path: ""
       type: "pensierini"
     values:
-      layout: "pensierino"
+      layout: null
   - scope:
       path: ""
       type: "posts"
