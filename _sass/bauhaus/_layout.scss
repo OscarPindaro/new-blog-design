@@ -283,3 +283,78 @@
     }
   }
 }
+
+.carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 2rem 0;
+  gap: 1rem;
+}
+
+.carousel-container {
+  overflow: hidden;
+  width: 100%;
+  border-radius: 8px;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.3s ease;
+}
+
+.carousel-track img {
+  min-width: 100%;
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+}
+
+.carousel-btn {
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 1rem;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+
+.carousel-btn:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.carousel-btn:active {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.carousel-slide {
+  min-width: 100%;
+  width: 100%;
+}
+
+.carousel-slide img {
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+}
+
+.carousel-caption {
+  font-size: 18px;
+  font-style: italic;
+  text-align: center;
+  margin-top: 1rem;
+  padding: 0 1rem;
+  color: #666;
+}
+
+.carousel-with-captions .carousel-track {
+  display: flex;
+}
