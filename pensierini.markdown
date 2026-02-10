@@ -1,3 +1,4 @@
 ---
 layout: pensierini
+title: Pensierini
 ---
