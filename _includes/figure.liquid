@@ -4,8 +4,11 @@
   {% if include.slot %}
     slot='{{ include.slot }}'
   {% endif %}
+  {% if include.center %}
+    style='text-align: center;'
+  {% endif %}
 >
-  <picture>
+ <picture>
     <!-- Auto scaling with imagemagick -->
     <!--
       See https://www.debugbear.com/blog/responsive-images#w-descriptors-and-the-sizes-attribute and
