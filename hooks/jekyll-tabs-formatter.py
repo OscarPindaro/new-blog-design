@@ -13,12 +13,23 @@ app = typer.Typer(add_completion=False)
 
 
 def has_tabs_tag(content: str) -> bool:
-    """Check if content contains {% tabs %} liquid tag."""
+    """Looks for in 'content' if there is a tabs liquid tag.
+    this tag is in this format:
+    {%<any amount of whitespaces>tabs<anyamount of whitespaces>%}
+    
+    as you can see the regex works even without specificing the last two '%}' characters.
+    To be fair, possible bugs could originate from this. """
     return bool(re.search(r'{%\s*tabs\s+', content))
 
 
 def has_tabs_frontmatter(content: str) -> bool:
-    """Check if front matter already has tabs: true."""
+    """checks if the frontmatter of a jekyll document has a fronmatter.
+    
+    a frontmatter is 3 dashes, with anything after, and then 3 dashes again. there
+    can be whitespaces.
+
+    If it's not present return False, otherwise, check if 'tabs: true' is present.
+    """
     # Match YAML front matter
     frontmatter_match = re.match(r'^---\s*\n(.*?\n)---\s*\n', content, re.DOTALL)
     if not frontmatter_match:
@@ -29,7 +40,14 @@ def has_tabs_frontmatter(content: str) -> bool:
 
 
 def add_tabs_frontmatter(content: str) -> str:
-    """Add tabs: true to front matter."""
+    """if there is not a frontmatter, it returns the original text as is.
+    Probably in the future this behaviour will change.
+
+    Frontmatter is the second matched group (.*?\n)
+    At the end of it let's add on a new line 'tabs: true\n'
+    
+    Finally, concatenated all the group. don't know what that .end() is.
+    """
     # Match YAML front matter
     frontmatter_match = re.match(r'^(---\s*\n)(.*?\n)(---\s*\n)', content, re.DOTALL)
     if not frontmatter_match:
@@ -47,7 +65,13 @@ def add_tabs_frontmatter(content: str) -> str:
 
 
 def process_file(filepath: Path) -> bool:
-    """Process a single file. Returns True if file was modified."""
+    """ Opens a file and adds, if missing, the tabs: true argument if conditions are met.
+
+    By default it checks if the file contains the 'tabs' liquid tag. if it does not have the frontmatter,
+    it automatically adds it.
+
+    then, writes the new string at the original path location.
+    """
     try:
         content = filepath.read_text(encoding='utf-8')
     except Exception as e:
