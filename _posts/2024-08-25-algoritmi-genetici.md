@@ -7,6 +7,7 @@ tags: matematica code
 categories: animations
 featured: true
 thumbnail: /assets/gif/gen_alg_eight_queens/QueenAttacking_ManimCE_v0.18.1.gif
+summary: Gli _algoritmi genetici_ sono degli algoritmi il cui funzionamento si ispira al processo di _selezione naturale_, in cui gli individui di una popolazione continuano a cambiare e a riprodursi.  
 ---
 Gli _algoritmi genetici_ sono una classe di algoritmi utilizzati per prototipare rapidamente soluzioni a problemi complessi. Il loro funzionamento si ispira al processo di _selezione naturale_, in cui gli individui di una popolazione continuano a cambiare e a riprodursi. Solo gli individui più adatti riescono a sopravvivere.
 
