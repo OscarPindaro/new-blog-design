@@ -6,7 +6,7 @@ description: Un framework per convertire personaggi in Language Models
 tags: llm ai roleplay
 categories: [llm, roleplay]
 featured: true
-thumbnail: /assets/img/limone32_bordo_colorato.png
+thumbnail: assets/img/limone32_bordo_colorato.png
 tabs: true
 ---
 
