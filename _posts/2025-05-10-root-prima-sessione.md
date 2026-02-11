@@ -109,9 +109,9 @@ Durante la fuga, visto che avevano ottenuto la fiducia dell'alleanza, sono stati
 Alla fine della prima sessione avevo avuto come feedback la richiesta di avere una mappa esplicita dei luoghi in cui avvengono gli eventi.
 Visto che mi sono ridotto all'ultimo ho disegnato l'obbrobrio riportato qua sotto.
 
-{% include figure.liquid 
-  loading="eager" 
-  path="assets/img/gdr/cala_beltranda_mappa.jpg" 
+{% include figure.liquid
+  loading="eager"
+  path="assets/img/gdr/cala_beltranda_mappa.jpg"
   class="img-fluid rounded z-depth-1"
   caption="La mia opera magna, pennarelli su tela. Il pezzo di carta tagliato nell'angolo in basso a sinistra bilancia la composizione, in un contrapposto che coinvolge il lago, la piazza e il meraviglioso porto."
 %}

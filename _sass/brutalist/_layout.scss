@@ -20,7 +20,7 @@
     color: $text-color;
     text-decoration: none;
   }
-  
+
   &:hover {
     text-decoration: underline;
   }
@@ -46,7 +46,7 @@
     &:not(:last-child) {
       margin-right: $spacing-unit;
     }
-    
+
     &:hover {
       text-decoration: underline;
     }

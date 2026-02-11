@@ -20,7 +20,7 @@
     color: $text-color;
     text-decoration: none;
   }
-  
+
   &:hover {
     text-decoration: underline;
   }
@@ -46,11 +46,11 @@
     &:not(:last-child) {
       margin-right: $spacing-unit;
     }
-    
+
     &:hover {
       text-decoration: underline;
     }
-    
+
     // Active/current page style
     &.active,
     &[aria-current="page"] {
@@ -58,7 +58,7 @@
       border: 3px solid $black;
       padding: 4px 8px;
       text-decoration: none;
-      
+
       &:hover {
         text-decoration: none;
       }

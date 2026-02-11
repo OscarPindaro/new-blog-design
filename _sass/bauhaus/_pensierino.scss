@@ -4,7 +4,7 @@
 }
 
 .pensierino-element--list {
-  scroll-margin-top: 40vh;  
+  scroll-margin-top: 40vh;
   // Color cycling based on position from the end (3 colors)
   &:nth-last-child(3n+1) pensierino-element {
     border-left-color: $blue;
@@ -31,24 +31,24 @@ pensierino-element {
   padding: $spacing-unit * 0.5;
   border-left: 5px solid;
   margin-bottom: $spacing-unit;
-  
+
   time {
     display: block;
     font-size: $small-font-size;
     margin-bottom: $spacing-unit * 0.25;
     font-weight: bold;
   }
-  
+
   p {
     margin: 0;
     line-height: $base-line-height;
     color: $text-color;
-    
+
     &:not(:last-child) {
       margin-bottom: $spacing-unit * 0.25;
     }
   }
-  
+
   .pensierino-link {
     color: inherit;
     opacity: 0.2;
@@ -56,12 +56,12 @@ pensierino-element {
     text-decoration: none;
     transition: opacity 0.2s;
     position: relative;
-    
+
     &.copied {
       opacity: 1 !important;
       animation: flash 0.5s ease-out;
     }
-    
+
     &::after {
       content: 'Copied!';
       position: absolute;
@@ -75,21 +75,21 @@ pensierino-element {
       pointer-events: none;
       white-space: nowrap;
     }
-    
+
     &.copied::after {
       animation: show-message 2s ease-out;
     }
   }
-  
+
   .pensierino-link svg {
     fill: currentColor;
   }
-  
+
   .header {
     display: flex;
     align-items: center;
   }
-  
+
   &:hover .pensierino-link {
     opacity: 0.5;
   }
@@ -105,19 +105,19 @@ pensierino-element {
 }
 
 @keyframes show-message {
-  0% { 
+  0% {
     opacity: 0;
     transform: translateY(0) translateX(-5px);  // Remove -50%
   }
-  10% { 
+  10% {
     opacity: 1;
     transform: translateY(0) translateX(0);  // Remove -50%
   }
-  90% { 
+  90% {
     opacity: 1;
     transform: translateY(0) translateX(0);  // Remove -50%
   }
-  100% { 
+  100% {
     opacity: 0;
     transform: translateY(0) translateX(5px);  // Remove -50%
   }

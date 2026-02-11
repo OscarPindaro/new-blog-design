@@ -19,7 +19,7 @@ Sì. Siamo d'accordo. Ognuno fa quello che vuole. Ma tu che cosa pensi?
     loading="eager"
     path="assets/img/opinioni/falcon_punch.png"
     class="img-fluid rounded z-depth-1"
-    caption="eh ma ognuno fa quello che vuo-" 
+    caption="eh ma ognuno fa quello che vuo-"
     max-width="600px"
     center=true
 %}

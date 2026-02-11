@@ -1,7 +1,7 @@
 @mixin bauhaus-underline {
   text-decoration: none;
   background-image: linear-gradient(
-    to right, 
+    to right,
     $blue 0%, $blue 33.33%,
     $yellow 33.33%, $yellow 66.66%,
     $red 66.66%, $red 100%
@@ -11,10 +11,10 @@
   background-repeat: no-repeat;
   padding-bottom: 2px;
   transition: color 0.2s ease;
-  
+
   &:hover {
     background-image: linear-gradient(
-      to right, 
+      to right,
       $red 0%, $red 33.33%,
       $yellow 33.33%, $yellow 66.66%,
       $blue 66.66%, $blue 100%

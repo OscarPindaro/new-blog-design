@@ -45,4 +45,3 @@ La seconda spiegazione è che il mio caro compare evidentemente rispetto a prima
     class="img-fluid rounded z-depth-1"
     caption = "Sam Altman... sarai il primo a essere reclamato dallo Jihad Butleriano"
 %}
-

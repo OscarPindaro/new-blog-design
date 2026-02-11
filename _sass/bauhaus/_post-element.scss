@@ -4,23 +4,23 @@ post-item {
   padding: $spacing-unit * 0.75 0;
   border-bottom: $divider-thickness solid $grey-color-dark;
   // border-top: $divider-thickness solid $grey-color-dark;
-  
+
   // &:last-child {
   //   border-bottom: none;
   // }
-  
+
   // Only use flex when image exists
   &:has(img) {
     display: flex;
     gap: $spacing-unit;
-    align-items: flex-start;
+    align-items: flex-center;
   }
-  
+
   // Content wrapper
   .content {
     flex: 1;
   }
-  
+
   // Title
 h3 {
     margin-bottom: $spacing-unit * 0.5;
@@ -28,7 +28,7 @@ h3 {
     @include relative-font-size(1.5);
     font-weight: 700;
     line-height: 1.2;
-    
+
     a {
       @include bauhaus-underline;
     }
@@ -40,7 +40,7 @@ h3 {
     color: $grey-color-dark;
     line-height: $summary-line-height;
   }
-  
+
   // Date
   time {
     font-size: $small-font-size;
@@ -48,20 +48,20 @@ h3 {
     display: block;
     font-weight: 400;
   }
-  
+
   // Image
   img {
     width: 200px;
     height: auto;
-    object-fit: cover;
+    object-fit: contain;
     flex-shrink: 0;
     border: none;
-    
+
     @include media-query($on-palm) {
       display: none;
     }
   }
-  
+
   // Categories container
   .categories {
     display: flex;
@@ -69,7 +69,7 @@ h3 {
     margin-bottom: $spacing-unit * 0.5;
     flex-wrap: wrap;
   }
-  
+
   // Category badges
   category-badge {
     display: inline-flex;
@@ -78,20 +78,20 @@ h3 {
     font-size: $small-font-size;
     font-weight: 700;
     text-transform: uppercase;
-    
+
     &::before {
       content: '';
       display: inline-block;
       flex-shrink: 0;
     }
-    
+
     // Computer Science - blue square
     &[data-category="computer-science"]::before {
       width: 32px;
       height: 32px;
       background-color: $blue;
     }
-    
+
     // GDR - yellow triangle
     &[data-category="gdr"]::before {
       width: 0;
@@ -100,7 +100,7 @@ h3 {
       border-right: 16px solid transparent;
       border-bottom: 28px solid $yellow;
     }
-    
+
     // Philosophy - red circle
     &[data-category="philosophy"]::before {
       width: 32px;

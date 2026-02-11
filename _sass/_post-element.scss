@@ -22,7 +22,7 @@ $post-element-border: 1px solid $grey-color-light;  // for card style
 .post-element__title {
   margin-bottom: $spacing-unit * 0.25;  // Space below title before summary
   margin-top: 0;  // Remove default h3 top margin if any
-  
+
   @include relative-font-size(1.5);
   font-weight: bold;
   line-height: 1.2;
@@ -30,11 +30,11 @@ $post-element-border: 1px solid $grey-color-light;  // for card style
 
 .post-element__link {
   color: $brand-color;
-  
+
   &:visited {
     color: darken($brand-color, 15%);
   }
-  
+
   &:hover {
     color: $text-color;
   }
@@ -48,7 +48,7 @@ $post-element-border: 1px solid $grey-color-light;  // for card style
 
 // Date styles
 .post-element__date {
-  font-size: $small-font-size; 
+  font-size: $small-font-size;
   color: $grey-color;
   display: block;
 }
@@ -83,7 +83,7 @@ $post-element-border: 1px solid $grey-color-light;  // for card style
   padding-bottom: $spacing-unit * 0.5;
   border-bottom: 3px solid $grey-color-light;
   margin-bottom: $spacing-unit * 0.5;
-  
+
   &:last-child {
     border-bottom: none;
     padding-bottom: 0;

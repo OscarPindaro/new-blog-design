@@ -16,7 +16,7 @@ def has_tabs_tag(content: str) -> bool:
     """Looks for in 'content' if there is a tabs liquid tag.
     this tag is in this format:
     {%<any amount of whitespaces>tabs<anyamount of whitespaces>%}
-    
+
     as you can see the regex works even without specificing the last two '%}' characters.
     To be fair, possible bugs could originate from this. """
     return bool(re.search(r'{%\s*tabs\s+', content))
@@ -24,7 +24,7 @@ def has_tabs_tag(content: str) -> bool:
 
 def has_tabs_frontmatter(content: str) -> bool:
     """checks if the frontmatter of a jekyll document has a fronmatter.
-    
+
     a frontmatter is 3 dashes, with anything after, and then 3 dashes again. there
     can be whitespaces.
 
@@ -34,7 +34,7 @@ def has_tabs_frontmatter(content: str) -> bool:
     frontmatter_match = re.match(r'^---\s*\n(.*?\n)---\s*\n', content, re.DOTALL)
     if not frontmatter_match:
         return False
-    
+
     frontmatter = frontmatter_match.group(1)
     return bool(re.search(r'^tabs:\s*true\s*$', frontmatter, re.MULTILINE))
 
@@ -45,22 +45,22 @@ def add_tabs_frontmatter(content: str) -> str:
 
     Frontmatter is the second matched group (.*?\n)
     At the end of it let's add on a new line 'tabs: true\n'
-    
+
     Finally, concatenated all the group. don't know what that .end() is.
     """
     # Match YAML front matter
     frontmatter_match = re.match(r'^(---\s*\n)(.*?\n)(---\s*\n)', content, re.DOTALL)
     if not frontmatter_match:
         return content
-    
+
     opening = frontmatter_match.group(1)
     frontmatter = frontmatter_match.group(2)
     closing = frontmatter_match.group(3)
     rest = content[frontmatter_match.end():]
-    
+
     # Add tabs: true at the end of front matter
     updated_frontmatter = frontmatter.rstrip('\n') + '\ntabs: true\n'
-    
+
     return opening + updated_frontmatter + closing + rest
 
 
@@ -77,18 +77,18 @@ def process_file(filepath: Path) -> bool:
     except Exception as e:
         typer.echo(f"{filepath}: Error reading file: {e}", err=True)
         return False
-    
+
     # Check if file uses tabs but doesn't have tabs: true
     if has_tabs_tag(content) and not has_tabs_frontmatter(content):
         updated_content = add_tabs_frontmatter(content)
-        
+
         try:
             filepath.write_text(updated_content, encoding='utf-8')
             return True
         except Exception as e:
             typer.echo(f"{filepath}: Error writing file: {e}", err=True)
             return False
-    
+
     return False
 
 
@@ -96,18 +96,18 @@ def process_file(filepath: Path) -> bool:
 def main(files: List[Path] = typer.Argument(..., help="Files to process")):
     """Add tabs: true to Jekyll posts that use {% tabs %} liquid tags."""
     modified_files = []
-    
+
     for filepath in files:
         if process_file(filepath):
             modified_files.append(filepath)
-    
+
     if modified_files:
         typer.echo("Added 'tabs: true' to front matter in:", err=True)
         for filepath in modified_files:
             typer.echo(f"  {filepath}", err=True)
         typer.echo("\nPlease review and re-stage these files.", err=True)
         raise typer.Exit(1)
-    
+
     raise typer.Exit(0)
 
 

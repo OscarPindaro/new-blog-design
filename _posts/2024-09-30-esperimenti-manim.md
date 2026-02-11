@@ -6,7 +6,7 @@ description: Una raccolta di animazioni per imparare ad usare meglio manim
 tags: code
 categories: animations
 featured: true
-thumbnail: 'assets/gif/linestar/light/LinestarScene_onedark_vivid_rainbow_f0ead6.gif' 
+thumbnail: 'assets/gif/linestar/light/LinestarScene_onedark_vivid_rainbow_f0ead6.gif'
 ---
 
 Come si può intuire dal titolo, questo post non ha un vero proprio tema, ma è più una raccolta di animazioni che ho fatto per diventare un po' più disinvolto con [Manim](https://www.manim.community/), la libreria python che utilizzo per creare le gif del blog.

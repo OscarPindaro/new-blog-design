@@ -224,21 +224,21 @@ table {
   color: $text-color;
   border-collapse: collapse;
   border: 1px solid $grey-color-light;
-  
+
   tr {
     border-bottom: 1px solid $grey-color-light;
   }
-  
+
   th, td {
     padding: ($spacing-unit * 0.4) ($spacing-unit * 0.5);
   }
-  
+
   th {
     background-color: #f5f5f5;
     border-bottom: 2px solid $grey-color-light;
     font-weight: 700;
   }
-  
+
   td {
     border-bottom: 1px solid $grey-color-light;
   }

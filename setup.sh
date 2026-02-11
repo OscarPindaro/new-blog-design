@@ -10,7 +10,7 @@ if [ ! -d ".venv" ]; then
 fi
 
 # installing dependencies
-sudo dnf install ImageMagick 
+sudo dnf install ImageMagick
 
 # Activate virtual environment
 echo "Activating virtual environment..."

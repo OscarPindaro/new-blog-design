@@ -30,7 +30,7 @@ github_username:  OscarPindaro
 markdown: kramdown
 kramdown:
   math_engine: katex
- 
+
 
 # Build settings
 theme: minima
@@ -111,3 +111,4 @@ exclude:
   - vendor/gems/
   - vendor/ruby/
   - .venv
+  - .pre-commit-config.yaml

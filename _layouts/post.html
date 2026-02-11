@@ -31,7 +31,7 @@ layout: default
       const track = carousel.querySelector('.carousel-track');
       const images = track.querySelectorAll('img');
       const totalImages = images.length;
-      
+
       let currentIndex = parseInt(carousel.dataset.currentIndex || '0');
       currentIndex = (currentIndex + direction + totalImages) % totalImages;
       carousel.dataset.currentIndex = currentIndex;

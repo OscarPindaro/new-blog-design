@@ -7,3 +7,24 @@ repos:
         language: python
         files: '^_posts/.*\.md$'
         additional_dependencies: ['typer>=0.9.0']
+  -   repo: https://github.com/pre-commit/pre-commit-hooks
+      rev: v6.0.0  # Use the ref you want to point at
+      hooks:
+      - id: trailing-whitespace
+      - id: check-ast
+      - id: check-case-conflict
+      - id: check-executables-have-shebangs
+      - id: check-illegal-windows-names
+      - id: check-json
+      - id: check-shebang-scripts-are-executable
+      - id: check-symlinks
+      - id: check-toml
+      - id: check-yaml
+      - id: detect-aws-credentials
+        args: ["--allow-missing-credentials"]
+      - id: detect-private-key
+      - id: end-of-file-fixer
+      - id: mixed-line-ending
+      - id: pretty-format-json
+        args: ["--autofix", "--indent 2", "--no-sort-keys"]
+      - id: trailing-whitespace
