@@ -9,6 +9,9 @@ if [ ! -d ".venv" ]; then
     python3 -m venv .venv
 fi
 
+# installing dependencies
+sudo dnf install ImageMagick 
+
 # Activate virtual environment
 echo "Activating virtual environment..."
 source .venv/bin/activate

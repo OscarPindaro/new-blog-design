@@ -35,8 +35,31 @@ kramdown:
 # Build settings
 theme: minima
 plugins:
-  - jekyll-feed
-  - jekyll-tabs
+  - jekyll-feed # geenrates the rss feed
+  - jekyll-tabs # for generating tabs with different text in it
+  - jekyll-imagemagick # for responsive images of different sizes
+
+imagemagick:
+  enabled: false# enables responsive images for your site (recommended, see https://github.com/alshedivat/al-folio/issues/537)
+  widths:
+    - 480
+    - 800
+    - 1400
+  input_directories:
+    - assets/img/
+    # - assets/gif/
+  input_formats:
+    - '.jpg'
+    - '.jpeg'
+    - '.png'
+    - '.tiff'
+    # - '.gif'
+  output_formats:
+    webp: '-quality 85'
+
+
+# this loads the images only when they are met while scrolling
+lazy_loading_images: true
 
 # Collections
 collections:
@@ -87,3 +110,4 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
+  - .venv
