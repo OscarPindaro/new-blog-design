@@ -6,14 +6,24 @@
       </a>
     </h3>
     
-    <p>
-      {%- if include.post.summary -%}
-        {{ include.post.summary | markdownify }}
-      {%- else -%}
-        {{ include.post.excerpt }}
-      {%- endif -%}
-    </p>
-    
+    {%- if include.post.summary -%}
+      {{ include.post.summary | markdownify }}
+    {%- else -%}
+      {%- assign paragraphs = include.post.content | split: "</p>" -%}
+      {%- for p in paragraphs -%}
+        {%- if p contains "<p>" -%}
+          {%- assign text = p | split: "<p>" | last -%}
+          {%- unless text contains "<h1" or text contains "<h2" or text contains "<h3" or text contains "<h4" or text contains "<h5" or text contains "<h6" -%}
+            {%- assign stripped = text | strip_html | strip -%}
+            {%- unless stripped == "" -%}
+              <p>{{ text }}</p>
+              {%- break -%}
+            {%- endunless -%}
+          {%- endunless -%}
+        {%- endif -%}
+      {%- endfor -%}
+    {%- endif -%}
+
     {%- if include.post.categories.size > 0 -%}
       <div class="categories">
         {%- for category in include.post.categories -%}
