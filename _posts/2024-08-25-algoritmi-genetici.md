@@ -20,7 +20,7 @@ Per spiegare il loro funzionamento, userò come esempio il problema delle 8 regi
 La "difficoltà" del problema consiste nel fatto che le regine minacciano gli altri pezzi che si trovano sulla stessa riga, colonna o diagonali. Tradizionalmente il problema viene risolto utilizzando un algoritmo _Depth-First Search (DFS)_ di backtracking.
 
 <div class="row mt-3">
-    <img src="/assets/gif/gen_alg_eight_queens/QueenAttacking_ManimCE_v0.18.1.gif" alt="Queen attacking pattern" style="width: 100%; border-radius: 4px;">
+    <img src="{{'assets/gif/gen_alg_eight_queens/QueenAttacking_ManimCE_v0.18.1.gif' | relative_url }}" alt="Queen attacking pattern" style="width: 100%; border-radius: 4px;">
 </div>
 <div class="caption" style="font-size: 18px; font-style: italic;">
     La regina è un pezzo molto aggressivo. Può attaccare in orizzontale, verticale e diagonale e muoversi di quanti passi vuole.
@@ -92,7 +92,7 @@ Il processo di _mutazione_ seleziona una riga a caso e cambia la posizione della
 Questo mutazione può essere considerato un _bit-flip_, in quanto la scacchiera rappresenta le posizioni in bit e lo spostamento della regina consiste nel cambiamento di due celle da 0 a 1 e viceversa.
 
 <div class="row mt-3">
-    <img src="/assets/gif/gen_alg_eight_queens/QueenMutating_ManimCE_v0.18.1.gif" alt="Queen mutation sequence" style="width: 100%; border-radius: 4px;">
+    <img src="{{ 'assets/gif/gen_alg_eight_queens/QueenMutating_ManimCE_v0.18.1.gif' | relative_url}}" alt="Queen mutation sequence" style="width: 100%; border-radius: 4px;">
 </div>
 <div class="caption" style="font-size: 18px; font-style: italic;">
     Una sequenza di mutazioni. La fitness può migliorare, peggiorare o rimanere invariata. Essendo una piccola perturbazione, la fitness non cambia drasticamente, ma rimane nell'intorno del valore originale.
@@ -103,7 +103,7 @@ Esistono altri tipi di crossover per matrici in cui, ad esempio, si considerano 
 Tuttavia la rappresentazione che è stata scelta permette di utilizzare la prima versione, più semplice, che inoltre continua a garantire la presenza di una sola regina per riga.
 
 <div class="row mt-3">
-    <img src="/assets/gif/gen_alg_eight_queens/QueenCrossover_ManimCE_v0.18.1.gif" alt="Queen crossover" style="width: 100%; border-radius: 4px;">
+    <img src="{{ '/assets/gif/gen_alg_eight_queens/QueenCrossover_ManimCE_v0.18.1.gif' | relative_url }}" alt="Queen crossover" style="width: 100%; border-radius: 4px;">
 </div>
 <div class="caption" style="font-size: 18px; font-style: italic;">
     Un crossover tra due scacchiere. Il numero di righe selezionate è arbitrario, e può essere fino a N-1 (N in questo caso è 8).
