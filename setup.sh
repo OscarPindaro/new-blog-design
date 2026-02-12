@@ -1,7 +1,6 @@
 #!/bin/bash
 set -e  # Exit on error
 
-
 # Check if rbenv is installed
 if ! command -v rbenv &> /dev/null; then
     echo "❌ Error: rbenv is not installed."
@@ -41,8 +40,25 @@ if [ "$ACTIVE_RUBY" != "$REQUIRED_RUBY" ]; then
     echo "Active version is: $ACTIVE_RUBY"
     exit 1
 fi
-
 echo "✓ Ruby $REQUIRED_RUBY is active"
+
+# Check if cargo is installed
+if ! command -v cargo &> /dev/null; then
+    echo "Installing cargo (Rust package manager)..."
+    sudo dnf install -y cargo
+else
+    echo "✓ cargo is already installed"
+fi
+
+# Check if lychee is installed
+if ! command -v lychee &> /dev/null; then
+    echo "Installing lychee link checker..."
+    cargo install lychee
+    # Ensure cargo bin is in PATH for current session
+    export PATH="$HOME/.cargo/bin:$PATH"
+else
+    echo "✓ lychee is already installed"
+fi
 
 # Create virtual environment if it doesn't exist
 if [ ! -d ".venv" ]; then
@@ -76,3 +92,6 @@ echo "✓ Setup complete!"
 echo ""
 echo "To activate the virtual environment in the future, run:"
 echo "  source .venv/bin/activate"
+echo ""
+echo "To check for broken links, run:"
+echo "  lychee --user-agent 'curl/7.54' --verbose --no-progress './_posts/**' './_pensierini/**'"
