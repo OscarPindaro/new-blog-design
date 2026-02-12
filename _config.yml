@@ -112,3 +112,6 @@ exclude:
   - vendor/ruby/
   - .venv
   - .pre-commit-config.yaml
+
+# some general configuration infos
+timezone: Europe/Rome
