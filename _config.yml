@@ -23,7 +23,7 @@ email: oscar.pindaro@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Mega blog super pazzo in cui scrivo quello che voglio
 baseurl: "/blog" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://oscarpindaro.github.io"
 github_username:  OscarPindaro
 
 
